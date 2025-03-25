@@ -1,34 +1,64 @@
-import java.util.Scanner;
 import java.util.*;
-
 public class Main{
     
-    static Map<String, String> m = new HashMap<>();
-    public static void mapping(){
-    m.put("sam","9010880281");
-    m.put("Akhil","7386356782");
-    m.put("kothoju","9347750325");
-    }
-    
     public static void main(String[] args){
-        mapping();
         
-        //to print only 1 value 
-        //System.out.println(m.get("sam"));
+        HashMap<Integer,Integer> map = new HashMap<>();
+        // map.put(2,5);
+       // map.put(1,4);
+        // map.put(8,9);
+        // map.put(4,6);
+        // map.put(2,7); // repeated the value 
         
-        //if the data is in thousands how to print all?
-        // Set<String> keys = m.keySet();
-        // for(String i : keys){
-        //     System.out.println(i+":"+m.get(i));
+        //frequency of values 
+        int arr[]= {2,5,3,7,7,8,1};
+        int n = arr.length;
+        
+        for(int i=0;i<n;i++){
+            int x = arr[i];
+            
+            if(map.containsKey(x)){
+                int prev = map.get(x);
+                map.put(x,prev+1);
+                
+            }else{
+                map.put(x,1);
+            }
+            
+        }
+        
+        //checking whether particualr value present in the value or not
+        // if(map.containsKey(13)){
+        //     int prev2= map.get(3);
         // }
         
-        //this is the another method
-        Set<Map.Entry<String,String>> values = m.entrySet();
-        for(Map.Entry<String,String> e:values ){
+        
+        // int n = 1;
+        // if(map.containsKey(n)){
+        //     int prev = map.get(n);
+        //     map.put(n,prev+1);
+        // }else{
+        //     map.put(n,4);
+        // }
+        
+       
+        // int prev = map.get(2);
+        // map.put(2,prev+1);
+        
+        
+        // System.out.println(map.get(1)+"");
+        // System.out.println(map.get(2)); //prints latest updated value
+        
+        
+        //printing all keys and values
+        // for(int sexy :map.keySet()){
+        //     System.out.println(sexy+":"+map.get(sexy));
+        // }
+        
+        //or
+        for(Map.Entry<Integer,Integer> e : map.entrySet()){
             System.out.println(e.getKey()+":"+e.getValue());
         }
         
-        
     }
-    
 }
