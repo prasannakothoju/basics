@@ -13,14 +13,20 @@ public class Main{
             
             if(map.containsKey(x)){
                 int prev = map.get(x);
-                map.put(x,prev+1);
+                
+                map.put(x,(prev+1));
+                
             }
             else{
                 map.put(x,1);
             }
         }
-        for(Map.Entry<Integer,Integer> e : map.entrySet()){ //imp line
-            System.out.println(e.getKey()+"->"+e.getValue());
+        // for(Map.Entry<Integer,Integer> e : map.entrySet()){ //imp line
+        //     System.out.println(e.getKey()+"->"+e.getValue());
+        // }
+        
+        for(int kiss :map.keySet()){
+            System.out.println(kiss+"-->"+map.get(kiss));
         }
     }
 }
